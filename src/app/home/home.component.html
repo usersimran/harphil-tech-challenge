@@ -1,0 +1,11 @@
+<div class="header"><span>Angular List</span></div>
+
+
+<div class="list">
+  <div class="home__profile" *ngFor="let listval of listdata">
+    <img src={{listval.image}} class="home__picture">
+    <span class="home__name">{{listval.name}}</span>
+    <!-- <a class="home__btn btn btn-link btn-rounded btn-sm" href="#" role="button">View</a> -->
+    <!-- <span class="home__value">2.1<span>B</span></span> -->
+  </div>
+</div>
