@@ -1,0 +1,14 @@
+<div class="header">
+    <i class="fa fa-arrow-left" (click)="goBack()"></i>
+    <span>{{name}}</span>
+</div>
+
+<div class="detail-content">
+ <div><img src={{image}} class="profileImg">
+    <h4>{{name}} <span>{{gender}} | {{detailData.species}}</span></h4>
+   
+</div>
+
+<div class="address-content"><i class="fa fa-address-book"></i><a> {{detailData.location.name}}</a></div>
+</div>
+

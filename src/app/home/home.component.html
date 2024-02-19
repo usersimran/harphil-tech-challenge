@@ -2,7 +2,7 @@
 
 
 <div class="list">
-  <div class="home__profile" *ngFor="let listval of listdata">
+  <div class="home__profile" *ngFor="let listval of listdata" (click)="getdetail(listval)">
     <img src={{listval.image}} class="home__picture">
     <span class="home__name">{{listval.name}}</span>
   </div>

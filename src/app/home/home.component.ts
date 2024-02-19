@@ -13,11 +13,23 @@ export class HomeComponent {
               private router: Router) { }
 
   ngOnInit() {
-    this.listservice.getList().subscribe((data: any) => {
-      this.listdata = data.results;
-      console.log("list data:"+JSON.stringify(this.listdata));
-    }
-    );
+    this.listservice.getList().subscribe({
+      next: (data) => {  ////// Success handler
+        this.listdata = data;
+        this.listdata=this.listdata.results;
+        console.log("list data:"+JSON.stringify(this.listdata));
+      },
+      error: (err: any) => { alert("An Unexpected error occured , Please try again")},    ////// Error handler
+      complete: () => { console.log("fetching of data is complete")}  ////// Process Complete
+
+      
+   });
+
   }
 
+  // ******* Get Character Detail
+  getdetail(selected:any)
+  {
+    this.router.navigate(['/detail'],{ state:  selected});
+  }
 }
